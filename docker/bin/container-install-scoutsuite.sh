@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # =====================================
-# install ScoutSuite into a virtual env
+# install ViniAudit into a virtual env
 # =====================================
-# AUTHOR: jason.ross@nccgroup.com
+
 # VERSION: 0.1.0
 # =====================================
 export DEBIAN_FRONTEND=noninteractive
@@ -12,11 +12,11 @@ WORKDIR=/root
 TMPDIR=/tmp
 
 # =====================================
-# install ScoutSuite
+# install ViniAudit
 # =====================================
 cd ${WORKDIR}
-virtualenv -p python3 scoutsuite
-source ${WORKDIR}/scoutsuite/bin/activate
-pip install scoutsuite
+virtualenv -p python3 ViniAudit
+source ${WORKDIR}/ViniAudit/bin/activate
+pip install ViniAudit
 
-echo -e "\n\nScoutsuite Installation Complete!\n\n"
+echo -e "\n\nViniAudit Installation Complete!\n\n"

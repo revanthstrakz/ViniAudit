@@ -2,8 +2,8 @@
 import unittest
 from unittest.mock import MagicMock, patch
 
-from ScoutSuite.__main__ import run_from_cli
-from ScoutSuite.core.cli_parser import ScoutSuiteArgumentParser
+from ViniAudit.__main__ import run_from_cli
+from ViniAudit.core.cli_parser import ViniAuditArgumentParser
 
 
 class TestMainClass(unittest.TestCase):
@@ -23,9 +23,9 @@ class TestMainClass(unittest.TestCase):
                                            ("get_provider", self.mocked_provider),
                                            ("Ruleset", self.mocked_ruleset),
                                            ("ProcessingEngine", self.mocked_engine),
-                                           ("ScoutReport", self.mocked_report),
+                                           ("ViniReport", self.mocked_report),
                                            ("webbrowser", self.mocked_browser)]:
-            constructor_obj = patch("ScoutSuite.__main__.%s" % import_name, return_value=mocked_object).start()
+            constructor_obj = patch("ViniAudit.__main__.%s" % import_name, return_value=mocked_object).start()
             self.constructor[mocked_object] = constructor_obj
 
         self.mocked_report.save = MagicMock(return_value="dummyfile")
@@ -39,7 +39,7 @@ class TestMainClass(unittest.TestCase):
 
         with patch("sys.stderr", return_value=MagicMock()):
             with self.assertRaises(SystemExit):
-                args = ScoutSuiteArgumentParser().parse_args(args)
+                args = ViniAuditArgumentParser().parse_args(args)
                 code = await run_from_cli(args)
 
         assert (code is None)
@@ -48,7 +48,7 @@ class TestMainClass(unittest.TestCase):
         args = ['aws']
         self.mocked_provider.provider_code = "aws"
 
-        args = ScoutSuiteArgumentParser().parse_args(args)
+        args = ViniAuditArgumentParser().parse_args(args)
         code = await run_from_cli(args)
 
         success_code = 0
@@ -57,13 +57,13 @@ class TestMainClass(unittest.TestCase):
         report_init_args = self.constructor[self.mocked_report].call_args_list[0][0]
         assert (report_init_args[0] == "aws")  # provider
         assert (report_init_args[1] == "aws")  # report_file_name
-        assert (report_init_args[2] == "scoutsuite-report")  # report_dir
+        assert (report_init_args[2] == "ViniAudit-report")  # report_dir
 
     async def test_gcp_provider(self):
         args = ["gcp", "--service-account", "fakecredentials"]
         self.mocked_provider.provider_code = "gcp"
 
-        args = ScoutSuiteArgumentParser().parse_args(args)
+        args = ViniAuditArgumentParser().parse_args(args)
         code = await run_from_cli(args)
 
         success_code = 0
@@ -72,13 +72,13 @@ class TestMainClass(unittest.TestCase):
         report_init_args = self.constructor[self.mocked_report].call_args_list[0][0]
         assert (report_init_args[0] == "gcp")  # provider
         assert (report_init_args[1] == "gcp")  # report_file_name
-        assert (report_init_args[2] == "scoutsuite-report")  # report_dir
+        assert (report_init_args[2] == "ViniAudit-report")  # report_dir
 
     async def test_azure_provider(self):
         args = ["azure", "--cli"]
         self.mocked_provider.provider_code = "azure"
 
-        args = ScoutSuiteArgumentParser().parse_args(args)
+        args = ViniAuditArgumentParser().parse_args(args)
         code = await run_from_cli(args)
 
         success_code = 0
@@ -87,14 +87,14 @@ class TestMainClass(unittest.TestCase):
         report_init_args = self.constructor[self.mocked_report].call_args_list[0][0]
         assert (report_init_args[0] == "azure")  # provider
         assert (report_init_args[1] == "azure")  # report_file_name
-        assert (report_init_args[2] == "scoutsuite-report")  # report_dir
+        assert (report_init_args[2] == "ViniAudit-report")  # report_dir
 
     async def test_unauthenticated(self):
         args = ["aws"]
         self.mocked_provider.provider_code = "aws"
         self.mocked_provider.authenticate = MagicMock(return_value=False)
 
-        args = ScoutSuiteArgumentParser().parse_args(args)
+        args = ViniAuditArgumentParser().parse_args(args)
         code = await run_from_cli(args)
 
         unauthenticated_code = 42
@@ -109,7 +109,7 @@ class TestMainClass(unittest.TestCase):
 
         self.mocked_provider.fetch = MagicMock(side_effect=_raise(KeyboardInterrupt))
 
-        args = ScoutSuiteArgumentParser().parse_args(args)
+        args = ViniAuditArgumentParser().parse_args(args)
         code = await run_from_cli(args)
 
         keyboardinterrupted_code = 130

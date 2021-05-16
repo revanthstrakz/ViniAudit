@@ -1,5 +1,5 @@
 # Import AWS utils
-from ScoutSuite.providers.aws.utils import (
+from ViniAudit.providers.aws.utils import (
     get_keys,
     no_camel,
     get_name,
@@ -8,16 +8,16 @@ from ScoutSuite.providers.aws.utils import (
     get_partition_name,
     snake_keys,
 )
-from ScoutSuite.utils import *
+from ViniAudit.utils import *
 import collections
 import unittest
 from unittest import mock
 import datetime
 
 #
-# Test methods for ScoutSuite/utils.py
+# Test methods for ViniAudit/utils.py
 #
-class TestScoutUtilsClass(unittest.TestCase):
+class TestViniUtilsClass(unittest.TestCase):
     def test_format_service_name(self):
         assert format_service_name("iAm") == "IAM"
         assert format_service_name("cloudformation") == "CloudFormation"
@@ -71,14 +71,14 @@ class TestScoutUtilsClass(unittest.TestCase):
 
     def test_get_identity(self):
         with mock.patch(
-            "ScoutSuite.providers.aws.utils.get_caller_identity",
+            "ViniAudit.providers.aws.utils.get_caller_identity",
             return_value={"Arn": "a:b:c:d:e:f:"},
         ):
             assert get_aws_account_id("") == "e"
 
     def test_get_partition_name(self):
         with mock.patch(
-            "ScoutSuite.providers.aws.utils.get_caller_identity",
+            "ViniAudit.providers.aws.utils.get_caller_identity",
             return_value={"Arn": "a:b:c:d:e:f:"},
         ):
             assert get_partition_name("") == "b"

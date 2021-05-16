@@ -3,14 +3,14 @@ from unittest import mock
 
 import pytest
 
-from ScoutSuite.providers.azure.authentication_strategy import AzureCredentials
-from ScoutSuite.providers.base.authentication_strategy import AuthenticationException
-from ScoutSuite.providers.base.authentication_strategy_factory import get_authentication_strategy
+from ViniAudit.providers.azure.authentication_strategy import AzureCredentials
+from ViniAudit.providers.base.authentication_strategy import AuthenticationException
+from ViniAudit.providers.base.authentication_strategy_factory import get_authentication_strategy
 
 
 # Test methods for Azure Provider
 class TestAzureProviderClass(unittest.TestCase):
-    @mock.patch("ScoutSuite.providers.azure.authentication_strategy.UserPassCredentials")
+    @mock.patch("ViniAudit.providers.azure.authentication_strategy.UserPassCredentials")
     def test_authenticate(self, mock_UserPassCredentials):
         azure_authentication_strategy = get_authentication_strategy("azure")
 

@@ -2,12 +2,12 @@ import os
 
 from unittest import mock
 import unittest
-from ScoutSuite.core.console import set_logger_configuration, print_debug
-from ScoutSuite.core.rule import Rule
-from ScoutSuite.core.ruleset import Ruleset
+from ViniAudit.core.console import set_logger_configuration, print_debug
+from ViniAudit.core.rule import Rule
+from ViniAudit.core.ruleset import Ruleset
 
 
-class TestScoutRulesRuleset(unittest.TestCase):
+class TestViniRulesRuleset(unittest.TestCase):
 
     def setUp(self):
         set_logger_configuration(is_debug=True)
@@ -16,7 +16,7 @@ class TestScoutRulesRuleset(unittest.TestCase):
         self.test_ruleset_001 = os.path.join(self.test_dir, 'data/test-ruleset.json')
         self.test_ruleset_002 = os.path.join(self.test_dir, 'data/test-ruleset-absolute-path.json')
 
-    @mock.patch("ScoutSuite.core.ruleset.print_error")
+    @mock.patch("ViniAudit.core.ruleset.print_error")
     def test_ruleset_class(self, printError):
         test001 = Ruleset(cloud_provider='aws', filename=self.test_ruleset_001)
         assert (os.path.isdir(test001.rules_data_path))
@@ -46,14 +46,14 @@ class TestScoutRulesRuleset(unittest.TestCase):
 
         test005 = Ruleset(cloud_provider='aws', filename=self.test_ruleset_001, ruleset_generator=True)
 
-    @mock.patch("ScoutSuite.core.ruleset.print_error")
+    @mock.patch("ViniAudit.core.ruleset.print_error")
     def test_ruleset_file_not_exist(self, printError):
         test003 = Ruleset(cloud_provider='aws', filename='tests/data/no-such-file.json')
         assert (test003.rules == [])
         assert (printError.call_count == 1)
         assert ("no-such-file.json does not exist" in printError.call_args_list[0][0][0])
 
-    @mock.patch("ScoutSuite.core.ruleset.print_exception")
+    @mock.patch("ViniAudit.core.ruleset.print_exception")
     def test_ruleset_invalid(self, printException):
         test004 = Ruleset(cloud_provider='aws', filename='tests/data/invalid-file.json')
         assert (test004.rules == [])
@@ -62,16 +62,16 @@ class TestScoutRulesRuleset(unittest.TestCase):
 
     def test_path_for_cloud_providers(self):
         target = Ruleset(cloud_provider='aws', filename=self.test_ruleset_001)
-        assert (os.path.samefile(target.rules_data_path, './ScoutSuite/providers/aws/rules'))
+        assert (os.path.samefile(target.rules_data_path, './ViniAudit/providers/aws/rules'))
 
         target = Ruleset(cloud_provider='azure', filename=self.test_ruleset_001)
-        assert (os.path.samefile(target.rules_data_path, './ScoutSuite/providers/azure/rules'))
+        assert (os.path.samefile(target.rules_data_path, './ViniAudit/providers/azure/rules'))
 
         target = Ruleset(cloud_provider='gcp', filename=self.test_ruleset_001)
-        assert (os.path.samefile(target.rules_data_path, './ScoutSuite/providers/gcp/rules'))
+        assert (os.path.samefile(target.rules_data_path, './ViniAudit/providers/gcp/rules'))
 
     def test_path_for_ruletypes(self):
-        rpath = "./ScoutSuite/providers/aws/rules/"
+        rpath = "./ViniAudit/providers/aws/rules/"
 
         target = Ruleset(cloud_provider='aws', filename='default.json')
         assert (os.path.samefile(target.filename, rpath + 'rulesets/default.json'))
@@ -84,7 +84,7 @@ class TestScoutRulesRuleset(unittest.TestCase):
         target = Ruleset(cloud_provider='aws', filename='filters')
         assert (os.path.samefile(target.filename, rpath + 'rulesets/filters.json'))
 
-    @mock.patch("ScoutSuite.core.ruleset.prompt_yes_no")
+    @mock.patch("ViniAudit.core.ruleset.prompt_yes_no")
     def test_file_search(self, prompt_yes_no):
         prompt_yes_no.return_value = False
 

@@ -3,16 +3,16 @@ import os
 import tempfile
 import unittest
 
-from ScoutSuite.core.console import set_logger_configuration, print_error
-from ScoutSuite.core.processingengine import ProcessingEngine
-from ScoutSuite.core.ruleset import Ruleset
+from ViniAudit.core.console import set_logger_configuration, print_error
+from ViniAudit.core.processingengine import ProcessingEngine
+from ViniAudit.core.ruleset import Ruleset
 
 
 class DummyObject(object):
     pass
 
 
-class TestScoutRulesProcessingEngine(unittest.TestCase):
+class TestViniRulesProcessingEngine(unittest.TestCase):
 
     def setUp(self):
         set_logger_configuration(is_debug=True)
@@ -25,7 +25,7 @@ class TestScoutRulesProcessingEngine(unittest.TestCase):
     def test_all_finding_rules(self):
         ruleset_file_name = os.path.join(self.test_dir, 'data/ruleset-test.json')
         # FIXME this is only for AWS
-        with open(os.path.join(self.test_dir, '../ScoutSuite/providers/aws/rules/rulesets/default.json'), 'rt') as f:
+        with open(os.path.join(self.test_dir, '../ViniAudit/providers/aws/rules/rulesets/default.json'), 'rt') as f:
             ruleset = json.load(f)
 
         for rule_file_name in ruleset['rules']:

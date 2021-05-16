@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 
-# distutils/setuptools install script for Scout Suite
+# distutils/setuptools install script for Vini Audit
 import os
 from setuptools import setup, find_packages
 
 # Package info
-NAME = 'ScoutSuite'
+NAME = 'ViniAudit'
 ROOT = os.path.dirname(__file__)
 VERSION = __import__(NAME).__version__
 
@@ -19,28 +19,28 @@ with open(os.path.join(os.path.dirname(os.path.realpath(__file__)), 'requirement
 setup(
     name=NAME,
     version=VERSION,
-    description='Scout Suite, a multi-cloud security auditing tool',
+    description='Vini Audit, a multi-cloud security auditing tool',
     long_description_content_type='text/markdown',
-    long_description=open('README.md').read(),
-    author='NCC Group',
-    url='https://github.com/nccgroup/ScoutSuite',
+    long_description='Todo',
+    author='Vini',
+    url='https://github.com/revanthstrakz/ViniAudit',
     entry_points={
         'console_scripts': [
-            'scout = ScoutSuite.__main__:run_from_cli',
+            'vini = ViniAudit.__main__:run_from_cli',
         ]
     },
     packages=find_packages(),
     package_data={
-        'ScoutSuite.data': [
+        'ViniAudit.data': [
             '*.json'
         ],
-        'ScoutSuite.output': [
+        'ViniAudit.output': [
             '*.html',
             '*.js',
             '*.css',
             '*.zip'
         ],
-        'ScoutSuite.providers': [
+        'ViniAudit.providers': [
             '*.json'
         ]
     },

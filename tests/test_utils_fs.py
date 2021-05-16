@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
 import unittest
-from ScoutSuite.core.fs import *
-from ScoutSuite.core.console import *
+from ViniAudit.core.fs import *
+from ViniAudit.core.console import *
 
 class TestOpinelFsClass(unittest.TestCase):
     """

@@ -4,7 +4,6 @@
 # install software packages needed for
 # all the other components to run
 # =====================================
-# AUTHOR: jason.ross@nccgroup.com
 # VERSION: 0.1.0
 # =====================================
 export DEBIAN_FRONTEND=noninteractive

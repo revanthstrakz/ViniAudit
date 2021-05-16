@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # =====================================
-# container-scoutsuite-install.sh
+# container-ViniAudit-install.sh
 # =====================================
-# AUTHOR: jason.ross@nccgroup.com
+
 # VERSION: 0.1.0
 # =====================================
 export DEBIAN_FRONTEND=noninteractive

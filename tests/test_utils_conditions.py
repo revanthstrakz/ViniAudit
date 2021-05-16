@@ -3,7 +3,7 @@ import os
 import unittest
 
 
-from ScoutSuite.core.conditions import *
+from ViniAudit.core.conditions import *
 
 class TestOpinelConditionClass(unittest.TestCase):
     """

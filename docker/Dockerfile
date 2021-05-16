@@ -39,8 +39,8 @@ RUN ["/bin/bash", "-c", "/root/bin/container-install-azure.sh"]
 # Install gCloud SDK
 RUN ["/bin/bash", "-c", "/root/bin/container-install-gcp.sh"]
 
-# Install ScoutSuite
-RUN ["/bin/bash", "-c", "/root/bin/container-install-scoutsuite.sh"]
+# Install ViniAudit
+RUN ["/bin/bash", "-c", "/root/bin/container-install-ViniAudit.sh"]
 
 # Remove scripts
 RUN ["rm", "-rf", "/root/bin"]

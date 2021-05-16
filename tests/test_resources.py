@@ -1,5 +1,5 @@
 import unittest
-from ScoutSuite.providers.base.resources.base import (
+from ViniAudit.providers.base.resources.base import (
     Resources, CompositeResources)
 import asyncio
 import json

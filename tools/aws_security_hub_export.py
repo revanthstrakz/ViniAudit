@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
-from ScoutSuite.providers.aws.utils import get_caller_identity
-from ScoutSuite.core.console import set_logger_configuration, print_info, print_exception
+from ViniAudit.providers.aws.utils import get_caller_identity
+from ViniAudit.core.console import set_logger_configuration, print_info, print_exception
 from tools.utils import results_file_to_dict
 
 import datetime
@@ -43,7 +43,7 @@ def format_finding_to_securityhub_format(aws_account_id,
             'Id': finding_key,
             'ProductArn':
                 'arn:aws:securityhub:' + region + ':' + aws_account_id + ':product/' + aws_account_id + '/default',
-            'GeneratorId': f'scoutsuite-{aws_account_id}',
+            'GeneratorId': f'ViniAudit-{aws_account_id}',
             'AwsAccountId': aws_account_id,
             'Types': ['Software and Configuration Checks/AWS Security Best Practices'],
             'FirstObservedAt': creation_date,
@@ -59,7 +59,7 @@ def format_finding_to_securityhub_format(aws_account_id,
                     'Text': finding_value.get('remediation', 'None') if finding_value.get('remediation') else 'None'
                 }
             },
-            'ProductFields': {'Product Name': 'Scout Suite'},
+            'ProductFields': {'Product Name': 'Vini Audit'},
             'Resources': [  # TODO this lacks affected resources
                 {
                     'Type': 'AwsAccount',
@@ -131,7 +131,7 @@ if __name__ == "__main__":
     parser.add_argument('-f', '--file',
                         required=True,
                         help="The path of the JSON results file to process, e.g. "
-                             "\"scoutsuite-report/scoutsuite-results/scoutsuite_results_aws-<profile>.js\".")
+                             "\"ViniAudit-report/ViniAudit-results/ViniAudit_results_aws-<profile>.js\".")
     args = parser.parse_args()
 
     try:

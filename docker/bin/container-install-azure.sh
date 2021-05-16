@@ -3,7 +3,7 @@
 # =====================================
 # install the Azure CLI Tools
 # =====================================
-# AUTHOR: jason.ross@nccgroup.com
+
 # VERSION: 0.1.0
 # =====================================
 export DEBIAN_FRONTEND=noninteractive

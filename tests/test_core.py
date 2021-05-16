@@ -1,26 +1,26 @@
 
 import unittest
-from ScoutSuite.core.conditions import pass_condition
-from ScoutSuite.core.cli_parser import *
-from ScoutSuite.core.console import prompt, prompt_overwrite, prompt_value
+from ViniAudit.core.conditions import pass_condition
+from ViniAudit.core.cli_parser import *
+from ViniAudit.core.console import prompt, prompt_overwrite, prompt_value
 
 #
-# Test methods for ScoutSuite/core
+# Test methods for ViniAudit/core
 #
-class TestScoutCore(unittest.TestCase):
+class TestViniCore(unittest.TestCase):
 
     ########################################
     # cli_parser.py
     ########################################
 
     def test_argument_parser(self):
-        test_arguments = ScoutSuiteArgumentParser()
-        assert (test_arguments.parser._subparsers.title == 'The provider you want to run scout against')
-        assert (test_arguments.subparsers._choices_actions[0].help == 'Run Scout against an Amazon Web Services account')
-        assert (test_arguments.subparsers._choices_actions[1].help == 'Run Scout against a Google Cloud Platform account')
-        assert (test_arguments.subparsers._choices_actions[2].help == 'Run Scout against a Microsoft Azure account')
-        assert (test_arguments.subparsers._choices_actions[3].help == 'Run Scout against an Alibaba Cloud account')
-        assert (test_arguments.subparsers._choices_actions[4].help == 'Run Scout against an Oracle Cloud Infrastructure account')
+        test_arguments = ViniAuditArgumentParser()
+        assert (test_arguments.parser._subparsers.title == 'The provider you want to run Vini against')
+        assert (test_arguments.subparsers._choices_actions[0].help == 'Run Vini against an Amazon Web Services account')
+        assert (test_arguments.subparsers._choices_actions[1].help == 'Run Vini against a Google Cloud Platform account')
+        assert (test_arguments.subparsers._choices_actions[2].help == 'Run Vini against a Microsoft Azure account')
+        assert (test_arguments.subparsers._choices_actions[3].help == 'Run Vini against an Alibaba Cloud account')
+        assert (test_arguments.subparsers._choices_actions[4].help == 'Run Vini against an Oracle Cloud Infrastructure account')
 
     ########################################
     # console.py

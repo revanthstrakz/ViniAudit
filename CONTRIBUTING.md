@@ -9,7 +9,7 @@
 
 ## Introduction
 
-First off, thank you for considering contributing to Scout Suite, you're awesome! 🎉
+First off, thank you for considering contributing to Vini Audit, you're awesome! 🎉
 
 Following these guidelines helps to communicate that you respect the time of the developers managing and developing this open source project. In return, they should reciprocate that respect in addressing your issue, assessing changes, and helping you finalize your pull requests.
 
@@ -43,7 +43,7 @@ When filing an issue, make sure to answer these five questions:
 
 ## How to suggest a new feature
 
-If you find yourself wishing for a feature that doesn't exist in Scout Suite, you are probably not alone. There are bound to be others out there with similar needs. Many of the features that Scout Suite has today have been added because our users saw the need. Open an issue on our issues list on GitHub which describes the feature you would like to see, why you need it, and how it should work.
+If you find yourself wishing for a feature that doesn't exist in Vini Audit, you are probably not alone. There are bound to be others out there with similar needs. Many of the features that Vini Audit has today have been added because our users saw the need. Open an issue on our issues list on GitHub which describes the feature you would like to see, why you need it, and how it should work.
 
 ## Code review process
 

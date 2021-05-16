@@ -2,10 +2,10 @@
 
 import os
 
-scout_dir = 'ScoutSuite'
+Vini_dir = 'ViniAudit'
 tests_dir = 'testsbase'
 
-for root, dirnames, filenames in os.walk(scout_dir):
+for root, dirnames, filenames in os.walk(Vini_dir):
     for filename in filenames:
         if filename.startswith('__') or not filename.endswith('.py'):
             continue

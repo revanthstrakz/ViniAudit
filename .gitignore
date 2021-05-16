@@ -46,8 +46,8 @@ nosetests.xml
 *.csv
 
 # Data folder and files
-scoutsuite-report*
-inc-scoutsuite-run*
+ViniAudit-report*
+inc-ViniAudit-run*
 report-*
 *.db
 

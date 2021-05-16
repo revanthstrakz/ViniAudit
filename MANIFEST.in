@@ -1,15 +1,15 @@
 include LICENSE
 include README.md
 include requirements.txt
-recursive-include ScoutSuite/data *
-recursive-include ScoutSuite/output/data *
-recursive-include ScoutSuite/providers/aws *
-recursive-include ScoutSuite/providers/aws/rules *
-recursive-include ScoutSuite/providers/azure *
-recursive-include ScoutSuite/providers/azure/rules *
-recursive-include ScoutSuite/providers/gcp *
-recursive-include ScoutSuite/providers/gcp/rules *
-recursive-include ScoutSuite/providers/aliyun *
-recursive-include ScoutSuite/providers/aliyun/rules *
-recursive-include ScoutSuite/providers/oci *
-recursive-include ScoutSuite/providers/oci/rules *
+recursive-include ViniAudit/data *
+recursive-include ViniAudit/output/data *
+recursive-include ViniAudit/providers/aws *
+recursive-include ViniAudit/providers/aws/rules *
+recursive-include ViniAudit/providers/azure *
+recursive-include ViniAudit/providers/azure/rules *
+recursive-include ViniAudit/providers/gcp *
+recursive-include ViniAudit/providers/gcp/rules *
+recursive-include ViniAudit/providers/aliyun *
+recursive-include ViniAudit/providers/aliyun/rules *
+recursive-include ViniAudit/providers/oci *
+recursive-include ViniAudit/providers/oci/rules *

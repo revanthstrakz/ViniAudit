@@ -86,5 +86,5 @@ if __name__ == "__main__":
         for provider_code in provider_codes:
             current_file_dirname = os.path.dirname(__file__)
             findings_path = os.path.abspath(
-                os.path.join(current_file_dirname, f"../ScoutSuite/providers/{provider_code}/rules/findings/"))
+                os.path.join(current_file_dirname, f"../ViniAudit/providers/{provider_code}/rules/findings/"))
             format_folder(findings_path)

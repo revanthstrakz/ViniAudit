@@ -3,10 +3,10 @@ from unittest import mock
 
 import pytest
 
-from ScoutSuite.providers import get_provider
-from ScoutSuite.providers.aws.authentication_strategy import AWSCredentials
-from ScoutSuite.providers.base.authentication_strategy import AuthenticationException
-from ScoutSuite.providers.base.authentication_strategy_factory import get_authentication_strategy
+from ViniAudit.providers import get_provider
+from ViniAudit.providers.aws.authentication_strategy import AWSCredentials
+from ViniAudit.providers.base.authentication_strategy import AuthenticationException
+from ViniAudit.providers.base.authentication_strategy_factory import get_authentication_strategy
 
 
 class Object(object):
@@ -15,8 +15,8 @@ class Object(object):
 
 # Test methods for AWS Provider
 class TestAWSProviderClass(unittest.TestCase):
-    @mock.patch("ScoutSuite.providers.aws.authentication_strategy.boto3")
-    @mock.patch("ScoutSuite.providers.aws.authentication_strategy.get_caller_identity")
+    @mock.patch("ViniAudit.providers.aws.authentication_strategy.boto3")
+    @mock.patch("ViniAudit.providers.aws.authentication_strategy.get_caller_identity")
     def test_authenticate(self, mock_get_caller_identity, mock_boto3):
 
         aws_authentication_strategy = get_authentication_strategy("aws")
@@ -85,9 +85,9 @@ class TestAWSProviderClass(unittest.TestCase):
             result = aws_authentication_strategy.authenticate(None, None, None, None)
 
     # mock two separate places from which get_aws_account_id is called
-    @mock.patch("ScoutSuite.providers.aws.facade.base.get_aws_account_id")
-    @mock.patch("ScoutSuite.providers.aws.provider.get_aws_account_id")
-    @mock.patch("ScoutSuite.providers.aws.provider.get_partition_name")
+    @mock.patch("ViniAudit.providers.aws.facade.base.get_aws_account_id")
+    @mock.patch("ViniAudit.providers.aws.provider.get_aws_account_id")
+    @mock.patch("ViniAudit.providers.aws.provider.get_partition_name")
     def test_get_report_name(
             self,
             mock_get_partiton_name,

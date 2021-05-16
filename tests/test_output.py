@@ -1,11 +1,11 @@
 import unittest
-from ScoutSuite.output.html import *
-from ScoutSuite.output.utils import *
+from ViniAudit.output.html import *
+from ViniAudit.output.utils import *
 
 #
-# Test methods for ScoutSuite/output
+# Test methods for ViniAudit/output
 #
-class TestScoutOutput(unittest.TestCase):
+class TestViniOutput(unittest.TestCase):
 
     ########################################
     # html.py
@@ -18,10 +18,10 @@ class TestScoutOutput(unittest.TestCase):
         assert ('json' in test_html.get_content_from_file(filename='/json_format.html'))
 
     def test_get_filename(self):
-        assert ('scoutsuite-report/report.html' in get_filename("REPORT"))
-        assert ('scoutsuite-report/scoutsuite-results/scoutsuite_results.js' in get_filename("RESULTS"))
-        assert ('scoutsuite-results/scoutsuite_results.js' in get_filename("RESULTS", relative_path=True))
-        assert ('scoutsuite-report/scoutsuite-results/scoutsuite_exceptions.js' in get_filename("EXCEPTIONS"))
-        assert ('scoutsuite-results/scoutsuite_exceptions.js' in get_filename("EXCEPTIONS", relative_path=True))
-        assert ('scoutsuite-report/scoutsuite-results/scoutsuite_errors.json' in get_filename("ERRORS"))
-        assert ('scoutsuite-results/scoutsuite_errors.json' in get_filename("ERRORS", relative_path=True))
+        assert ('ViniAudit-report/report.html' in get_filename("REPORT"))
+        assert ('ViniAudit-report/ViniAudit-results/ViniAudit_results.js' in get_filename("RESULTS"))
+        assert ('ViniAudit-results/ViniAudit_results.js' in get_filename("RESULTS", relative_path=True))
+        assert ('ViniAudit-report/ViniAudit-results/ViniAudit_exceptions.js' in get_filename("EXCEPTIONS"))
+        assert ('ViniAudit-results/ViniAudit_exceptions.js' in get_filename("EXCEPTIONS", relative_path=True))
+        assert ('ViniAudit-report/ViniAudit-results/ViniAudit_errors.json' in get_filename("ERRORS"))
+        assert ('ViniAudit-results/ViniAudit_errors.json' in get_filename("ERRORS", relative_path=True))

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import unittest
-from ScoutSuite.core.console import *
+from ViniAudit.core.console import *
 
 class TestOpinelUtilsConsoleClass(unittest.TestCase):
 

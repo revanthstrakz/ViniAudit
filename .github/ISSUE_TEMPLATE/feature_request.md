@@ -1,6 +1,6 @@
 ---
 name: Feature request
-about: Suggest an idea to improve Scout Suite!
+about: Suggest an idea to improve Vini Audit!
 title: ''
 labels: enhancement
 assignees: ''
