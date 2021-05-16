@@ -23,7 +23,7 @@ setup(
     long_description_content_type='text/markdown',
     long_description='Todo',
     author='Vini',
-    url='https://github.com/revanthstrakz/ViniAudit',
+    url='https://gitplaceholder.todo',
     entry_points={
         'console_scripts': [
             'vini = ViniAudit.__main__:run_from_cli',

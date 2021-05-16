@@ -14,7 +14,7 @@ class S3Facade(AWSBaseFacade):
             # If there are regions specified, try for each of them until one works.
             # Otherwise, try all the available regions until one works.
             # This is required in case there's an IAM policy that denies access to APIs on a regional basis,
-            # as per https://github.com/revanthstrakz/ViniAudit/issues/727
+            # as per https://gitplaceholder.todo/issues/727
             buckets = []
             exception = None
             region_list = self.regions if self.regions else await run_concurrently(lambda: self.session.get_available_regions('s3'))
@@ -25,7 +25,7 @@ class S3Facade(AWSBaseFacade):
                 except Exception as e:
                     exception = e
                 else:
-                    exception = None  # Fix for https://github.com/revanthstrakz/ViniAudit/issues/916#issuecomment-728783965
+                    exception = None  # Fix for https://gitplaceholder.todo/issues/916#issuecomment-728783965
                     break
             if not buckets:
                 if exception:

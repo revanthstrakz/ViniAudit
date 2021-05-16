@@ -1,6 +1,6 @@
 # Description
 
-**Make sure the PR is against the `develop` branch (see [Contributing](https://github.com/revanthstrakz/ViniAudit/blob/master/CONTRIBUTING.md)).**
+**Make sure the PR is against the `develop` branch (see [Contributing](https://gitplaceholder.todo/blob/master/CONTRIBUTING.md)).**
 
 Please include a summary of the change(s) and which issue(s) it addresses. Please also include relevant motivation and context.
 

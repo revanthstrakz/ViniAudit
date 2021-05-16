@@ -98,4 +98,4 @@ def format_service_name(service):
 
 
 def get_user_agent():
-    return 'Vini Audit/{} (https://github.com/revanthstrakz/ViniAudit)'.format(__version__)
+    return 'Vini Audit/{} (https://gitplaceholder.todo)'.format(__version__)

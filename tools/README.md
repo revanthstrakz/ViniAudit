@@ -2,7 +2,7 @@
 
 This folder holds a number of useful tools for development and advanced usage of Vini Audit.
 
-## [aws_security_hub_export.py](https://github.com/revanthstrakz/ViniAudit/blob/master/tools/aws_security_hub_export.py)
+## [aws_security_hub_export.py](https://gitplaceholder.todo/blob/master/tools/aws_security_hub_export.py)
 
 Allows exporting results from at report to AWS Security Hub.
 
@@ -40,7 +40,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> run('<profile>', 'ViniAudit-report/ViniAudit-results/ViniAudit_results_aws-<profile>.js')
 ```
 
-## [format_findings.py](https://github.com/revanthstrakz/ViniAudit/blob/master/tools/format_findings.py)
+## [format_findings.py](https://gitplaceholder.todo/blob/master/tools/format_findings.py)
 
 Formats all findings to ensure they follow standard format.
 
@@ -71,23 +71,23 @@ Formatting findings in /home/xxxxx/Git/ViniAudit/ViniAudit/providers/oci/rules/f
 Found 5/10 findings with no rationale
 ```
 
-Refer to https://github.com/revanthstrakz/ViniAudit/wiki/HowTo:-Create-a-new-rule for related information.
+Refer to https://gitplaceholder.todo/wiki/HowTo:-Create-a-new-rule for related information.
 
-## [gen-tests.py](https://github.com/revanthstrakz/ViniAudit/blob/master/tools/gen-tests.py)
+## [gen-tests.py](https://gitplaceholder.todo/blob/master/tools/gen-tests.py)
 
 TBD 
 
-## [process_raw_response.py](https://github.com/revanthstrakz/ViniAudit/blob/master/tools/process_raw_response.py)
+## [process_raw_response.py](https://gitplaceholder.todo/blob/master/tools/process_raw_response.py)
 
 Helps parse an object returned by the cloud provider's APIs and generate a boilerplate partial.
 
-Refer to https://github.com/revanthstrakz/ViniAudit/wiki/Tools & https://github.com/revanthstrakz/ViniAudit/wiki/HowTo:-Create-a-custom-partial-for-new-resources for usage information.
+Refer to https://gitplaceholder.todo/wiki/Tools & https://gitplaceholder.todo/wiki/HowTo:-Create-a-custom-partial-for-new-resources for usage information.
 
-## [sort-ruleset.py](https://github.com/revanthstrakz/ViniAudit/blob/master/tools/sort-ruleset.py)
+## [sort-ruleset.py](https://gitplaceholder.todo/blob/master/tools/sort-ruleset.py)
 
 Sorts and prettyfies a ruleset by file name.
 
-## [update-aws-ips.sh](https://github.com/revanthstrakz/ViniAudit/blob/master/tools/update-aws-ips.sh)
+## [update-aws-ips.sh](https://gitplaceholder.todo/blob/master/tools/update-aws-ips.sh)
 
 Updates the AWS CIDRs file.
 

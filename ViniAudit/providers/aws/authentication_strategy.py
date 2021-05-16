@@ -51,7 +51,7 @@ class AWSAuthenticationStrategy(AuthenticationStrategy):
 
             # Set custom user agent
             session._session.user_agent_name = 'Vini Audit'
-            session._session.user_agent_extra = 'Vini Audit/{} (https://github.com/revanthstrakz/ViniAudit)'.format(__version__)
+            session._session.user_agent_extra = 'Vini Audit/{} (https://gitplaceholder.todo)'.format(__version__)
             session._session.user_agent_version = __version__
 
             return AWSCredentials(session=session)

@@ -1,8 +1,8 @@
 # Since the HTTP library used by the Google API Client library is not
 # thread-safe, we leverage https://github.com/GoogleCloudPlatform/httplib2shim
 # resolves the following:
-#   - https://github.com/revanthstrakz/ViniAudit/issues/443
-#   - https://github.com/revanthstrakz/ViniAudit/issues/665
+#   - https://gitplaceholder.todo/issues/443
+#   - https://gitplaceholder.todo/issues/665
 import httplib2shim
 httplib2shim.patch()
 

@@ -1,3 +1,3 @@
 # Docker Image
 
-See the [wiki entry](https://github.com/revanthstrakz/ViniAudit/wiki/Docker-Image).
+See the [wiki entry](https://gitplaceholder.todo/wiki/Docker-Image).

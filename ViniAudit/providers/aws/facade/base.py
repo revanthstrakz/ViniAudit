@@ -71,13 +71,13 @@ class AWSFacade(AWSBaseFacade):
             available_services = await run_concurrently(
                 lambda: Session(region_name='us-east-1').get_available_services())
         except Exception as e:
-            # see https://github.com/revanthstrakz/ViniAudit/issues/548
+            # 548
             # If failed with the us-east-1 region, we'll try to use the region from the profile
             try:
                 available_services = await run_concurrently(
                     lambda: Session(region_name=self.session.region_name).get_available_services())
             except Exception as e:
-                # see https://github.com/revanthstrakz/ViniAudit/issues/685
+                # 685
                 # If above failed, and regions were explicitly specified, will try with those until one works
                 if chosen_regions:
                     for region in chosen_regions:
@@ -118,7 +118,7 @@ class AWSFacade(AWSBaseFacade):
                                                                                    partition_name))
                 regions = [value for value in idp_regions if value in identity_regions]
         except Exception as e:
-            # see https://github.com/revanthstrakz/ViniAudit/issues/548
+            # 548
             # If failed with the us-east-1 region, we'll try to use the region from the profile
             try:
                 # the cognito service is a composition of two boto3 services
@@ -135,7 +135,7 @@ class AWSFacade(AWSBaseFacade):
                                                                                                     partition_name))
                     regions = [value for value in idp_regions if value in identity_regions]
             except Exception as e:
-                # see https://github.com/revanthstrakz/ViniAudit/issues/685
+                # 685
                 # If above failed, and regions were explicitly specified, will try with those until one works
                 if chosen_regions:
                     for region in chosen_regions:
@@ -194,7 +194,7 @@ class AWSFacade(AWSBaseFacade):
             ec2_not_opted_in_regions = self.session.client('ec2', 'us-east-1') \
                 .describe_regions(AllRegions=True, Filters=[{'Name': 'opt-in-status', 'Values': ['not-opted-in']}])
         except Exception as e:
-            # see https://github.com/revanthstrakz/ViniAudit/issues/548
+            # 548
             # If failed with the us-east-1 region, we'll try to use the region from the profile
             try:
                 ec2_not_opted_in_regions = \
@@ -203,7 +203,7 @@ class AWSFacade(AWSBaseFacade):
                                          Filters=[{'Name': 'opt-in-status',
                                                    'Values': ['not-opted-in']}])
             except Exception as e:
-                # see https://github.com/revanthstrakz/ViniAudit/issues/685
+                # 685
                 # If above failed, and regions were explicitly specified, will try with those until
                 # one works
                 if chosen_regions:

@@ -20,7 +20,7 @@ class AADFacade:
         try:
             # This filters down the users which are pulled from the directory, otherwise for large tenants this
             # gets out of hands.
-            # See https://github.com/revanthstrakz/ViniAudit/issues/698
+            # 698
             user_filter = " and ".join([
                 'userType eq \'Guest\''
             ])
